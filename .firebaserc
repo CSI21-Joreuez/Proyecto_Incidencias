@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "incidencias-ebbd5": {
+      "hosting": {
+        "incidencias": [
+          "incidencias-ebbd5"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "incidencias-ebbd5"
+  }
+}
