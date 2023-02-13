@@ -1,0 +1,19 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+
+
+    <!-- Login Form -->
+    <form [formGroup]="incidencias">
+      <input type="text" id="lugar" class="fadeIn second" name="lugar" placeholder="Lugar Incidencia" formControlName="lugarIncidencia">
+      <input type="text" id="desc" class="fadeIn second" name="desc" placeholder="Descripcion de la Incidencia" formControlName="descripcion">
+      <input type="text" id="sol" class="fadeIn second" name="sol" placeholder="Posible Solucion de la Incidencia"formControlName="posibleSolucion">
+      <button (click)="guardar()" class="btn btn-primary">Guardar</button>
+    </form>
+  </div>
+</div>

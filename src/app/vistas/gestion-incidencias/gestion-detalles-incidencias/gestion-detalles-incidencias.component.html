@@ -1,0 +1,51 @@
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Revision De Incidencias</h3>
+                    <form class="requires-validation" [formGroup]="formIncidencia" >
+
+                        <div class="col-md-12">
+                            <h4 for="descripcion">Descipcion:</h4>
+                            <input type="text" formControlName="descripcion" id="descripcion" class="formControl" readonly>
+                            
+                            
+                        </div>
+
+                        <div class="col-md-12">
+                            <h4 for="lugarIncidencia">Lugar Incidencia:</h4>
+                                <input type="text" formControlName="lugarIncidencia" id="lugarIncidencia" class="formControl" readonly>
+                                
+                        </div>
+                        <div class="col-md-12">
+                            <h4 for="posibleSolucion">Posible Solucion:</h4>
+                                <input type="text" formControlName="posibleSolucion" id="posibleSolucion" class="formControl" readonly>
+                                
+                    </div>
+                    <div class="col-md-12">
+                        <h4 for="estadoIncidencias">Estado Incidencias:</h4>
+                        <select class="form-select mt-3" name="estadoIncidencias" id="estadoIncidencias" formControlName="estadoIncidencias" >
+                            <option value=Leida>Leida</option>
+                            <option value=Asignada>Asignada</option>
+                            <option value=Comenzada>Comenzada</option>
+                            <option value=Terminada>Terminada</option>
+                     </select>
+                </div>
+
+                       <div class="col-md-12">
+                        <h4 for="revisionIncidencia">Revision Incidencia:</h4>
+                        <input type="text" formControlName="revisionIncidencia" id="revisionIncidencia" class="formControl" readonly>
+
+                       </div>
+                        <div class="form-button mt-3">
+                            <app-volver></app-volver>
+                            <button (click)="guardar()" class="btn btn-secondary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
