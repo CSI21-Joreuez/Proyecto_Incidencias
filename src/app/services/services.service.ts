@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,5 +27,9 @@ export class ServicesService {
   //Borrado de una incidencia concreta
     delete(coleccion: string, documentId: string) {
       return this.afb.collection(coleccion).doc(documentId).delete();
+    }
+    getIncidenciaByFilter(coleccion: string, revision: boolean)
+    {
+      return this.afb.collection(coleccion, ref=> ref.where('revisionIncidencia', '==', revision)).snapshotChanges();
     }
 }

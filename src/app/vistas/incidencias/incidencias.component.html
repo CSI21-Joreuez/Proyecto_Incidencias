@@ -1,4 +1,14 @@
 <h2>[REVISION] Listado de Incidencias</h2>
+<form [formGroup]="formIncidencia">
+<select name="revisionIncidencia" id="revisionIncidencia" formControlName="revisionIncidencia"> 
+  <option disabled>Filtrar</option>
+  <option value=true>Revisada</option>
+  <option value=false (click)="getUnrevised()">No Revisada</option>
+  <option value="" selected>Todas</option>
+</select>
+
+</form>
+  
 
 <table mat-table [dataSource]="incidencia" class="mat-elevation-z8" style="width: 100%;">  
    

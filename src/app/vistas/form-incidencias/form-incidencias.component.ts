@@ -26,5 +26,6 @@ export class FormIncidenciasComponent implements OnInit {
   guardar(){
     this.incidencia = this.incidencias.value;
     this.firebase.create(this.coleccion,this.incidencia);
+    alert('Incidencia Creada Correctamente');
   } 
 }

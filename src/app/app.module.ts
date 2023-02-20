@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment.prod';
 import { AngularFireModule } from '@angular/fire/compat';
 import { DashboardComponent } from './shared/dashboard/dashboard.component';
+
 @NgModule({
   declarations: [
     AppComponent,

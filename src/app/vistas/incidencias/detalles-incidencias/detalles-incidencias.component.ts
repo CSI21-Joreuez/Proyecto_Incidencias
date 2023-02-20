@@ -37,7 +37,7 @@ export class DetallesIncidenciasComponent implements OnInit {
     if(this.formIncidencia.valid)
     this.fire.update(this.coleccion,this.documentId,this.incidencia).then(() => {alert("Revision Actualizada")});
     else{
-      alert("No se ha podido actuliazar el campo Revision")
+      alert("No se ha podido actualizar el campo Revision")
     };
     
   }
