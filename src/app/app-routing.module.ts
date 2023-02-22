@@ -7,7 +7,9 @@ then(m =>m.IncidenciasModule)},
 {path:'form', loadChildren: () => import('./vistas/form-incidencias/form-incidencias.module').
 then(m =>m.FormIncidenciasModule)},
 {path:'gestion', loadChildren: () => import('./vistas/gestion-incidencias/gestion-incidencias.module').
-then(m =>m.GestionIncidenciasModule)}
+then(m =>m.GestionIncidenciasModule)},
+{path:'usuarios', loadChildren: () => import('./vistas/usuarios/usuarios.module').
+then(m =>m.UsuariosModule)}
 ];
 
 @NgModule({
