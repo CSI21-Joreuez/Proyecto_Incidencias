@@ -32,4 +32,8 @@ export class ServicesService {
     {
       return this.afb.collection(coleccion, ref=> ref.where('revisionIncidencia', '==', revision)).snapshotChanges();
     }
+      //Where specific
+  getIncidenciaEspecifica(coleccion: string, documentId: string, id: number){
+    return this.afb.collection(coleccion, ref => ref.where('id', '==', id)).doc(documentId).snapshotChanges();
+  }
 }
