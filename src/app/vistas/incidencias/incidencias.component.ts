@@ -16,7 +16,7 @@ export class IncidenciasComponent implements OnInit {
   displayedColumns: string[] = ['Descripcion','Lugar', 'Estado', 'Solucion', 'Revision'];
   filtrado: boolean= false;
 
-  listaIncidenciasNoRevisadas: any[] = [];
+  listaIncidenciasNoRevisadas:any;
 
   formIncidencia = this.fb.group({
     revisionIncidencia:[false]
@@ -61,6 +61,7 @@ this.getUnrevised();
 
 getUnrevised(){
   this.firebase.getIncidenciaByFilter(this.coleccion,false).subscribe((incidenciasSnapshot: any) =>{
+    this.listaIncidenciasNoRevisadas =this.incidencia;
     incidenciasSnapshot.forEach((incidenciaData:any) =>{
       this.listaIncidenciasNoRevisadas.push({
         documentId: incidenciaData.payload.doc.id,
