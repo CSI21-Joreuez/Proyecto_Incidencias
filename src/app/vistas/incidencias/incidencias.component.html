@@ -1,12 +1,11 @@
 <section class="header-section">
   <mat-button-toggle-group [(ngModel)]="fontStyle" aria-label="Font Style">
   <mat-button-toggle value=" ">Todas</mat-button-toggle>
-  <mat-button-toggle value="revisadas">Revisadas</mat-button-toggle>
-  <mat-button-toggle value="no revisadas">No revisidadas</mat-button-toggle>
+  <mat-button-toggle value="Revisadas">Revisadas</mat-button-toggle>
+  <mat-button-toggle value="Sin Revisar">Sin Revisar</mat-button-toggle>
   </mat-button-toggle-group>
 </section>
 <h3 style="text-align:center"> Lista Incidencias
-  <abbr title="Haz click en cualquier parte de la lista para ver los detalles de la Incidencia" ><button class="btn btn-warning">?</button></abbr>
 </h3>
 
 <br><br>
@@ -18,51 +17,71 @@
       <th scope="col"></th>
       <th scope="col">Lugar</th>
       <th scope="col">Descripcion</th>
-      <th scope="col">Revisada</th>
+      <th scope="col">Posible Solucion</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Revision</th>
     </tr>
   </thead>
   <tbody *ngIf="fontStyle == ' '">
-      <tr *ngFor="let incidencia of listaIncidencias; let i = index" routerLink="/revisionIncidencias/revisionIncidencias/{{incidencia.id}}">
+      <tr *ngFor="let incidencia of listaIncidencias; let i = index" routerLink="detalles/{{incidencia.documentId}}">
           <th scope="row">{{i + 1}}</th>
           <td>
-              {{incidencia.data.lugar}}
+              {{incidencia.lugarIncidencia}}
           </td>
           <td>
-              {{incidencia.data.descripcion}} 
+              {{incidencia.descripcion}} 
           </td>
           <td>
-              {{incidencia.data.revisada}}
+              {{incidencia.posibleSolucion}}
           </td>
+          <td>
+            {{incidencia.estadoIncidencias}}
+        </td>
+        <td>
+            {{incidencia.revisionIncidencia}}
+        </td>
       </tr>
   </tbody>
 
   <tbody *ngIf="fontStyle == 'Revisadas'">
-      <tr *ngFor="let incidencia of listaIncidenciasRevisadasTrue; let i = index" routerLink="/revisionIncidencias/revisionIncidencias/{{incidencia.id}}">
+      <tr *ngFor="let incidencia of listaIncidenciasRevisadasTrue; let i = index" routerLink="detalles/{{incidencia.documentId}}">
           <th scope="row">{{i + 1}}</th>
           <td>
-              {{incidencia.data.lugar}}
+              {{incidencia.lugarIncidencia}}
           </td>
           <td>
-              {{incidencia.data.descripcion}} 
+              {{incidencia.descripcion}} 
           </td>
           <td>
-              {{incidencia.data.revisada}}
-          </td>
+            {{incidencia.posibleSolucion}}
+        </td>
+        <td>
+          {{incidencia.estadoIncidencias}}
+      </td>
+      <td>
+          {{incidencia.revisionIncidencia}}
+      </td>
       </tr>
   </tbody>
 
-  <tbody  *ngIf="fontStyle == 'Sin Revisadas'">
-      <tr *ngFor="let incidencia of listaIncidenciasRevisadasFalse; let i = index" routerLink="/revisionIncidencias/revisionIncidencias/{{incidencia.id}}">
+  <tbody  *ngIf="fontStyle == 'Sin Revisar'">
+      <tr *ngFor="let incidencia of listaIncidenciasRevisadasFalse; let i = index" routerLink="detalles/{{incidencia.documentId}}">
           <th scope="row">{{i + 1}}</th>
           <td>
-              {{incidencia.data.lugar}}
+              {{incidencia.lugarIncidencia}}
           </td>
           <td>
-              {{incidencia.data.descripcion}} 
+              {{incidencia.descripcion}} 
           </td>
           <td>
-              {{incidencia.data.revisada}}
-          </td>
+            {{incidencia.posibleSolucion}}
+        </td>
+        <td>
+          {{incidencia.estadoIncidencias}}
+      </td>
+      <td>
+          {{incidencia.revisionIncidencia}}
+      </td>
       </tr>
   </tbody>
 </table>

@@ -16,7 +16,7 @@ export class FormIncidenciasComponent implements OnInit {
     descripcion: [''],
     posibleSolucion: [''],
     estadoIncidencias:['pendiente'],
-    revisionIncidencia:[false]
+    revisionIncidencia:false
     
   })
   constructor( private firebase : ServicesService,private fb: FormBuilder) { }
