@@ -1,0 +1,29 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+
+
+    <!-- Login Form -->
+    <h1>Login</h1>
+    <form [formGroup]="formLogin">
+      <label>Email:</label>
+      <div>
+
+        <input type="text" class="fadeIn second"  placeholder="csi21@example@example.com"formControlName="email">
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" class="fadeIn second"  placeholder="Passwordxx1234" formControlName="clave" >
+      </div>
+      
+      <div class="form-group row ">
+        <label class="col-sm-4 col-form-label"></label>
+        <div class="col-sm-4">
+            <a routerLink="registro">¿No Tienes Cuenta?</a>
+        </div>
+        
+    </div>
+      <button class="btn btn-primary" (click)="login()" >Login</button>
+    </form>
+  </div>
+</div>

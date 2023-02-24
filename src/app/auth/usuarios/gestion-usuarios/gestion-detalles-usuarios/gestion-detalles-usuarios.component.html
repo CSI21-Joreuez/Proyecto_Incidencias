@@ -1,0 +1,49 @@
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Revision De Incidencias</h3>
+                    <form class="requires-validation" [formGroup]="formUsuario" >
+
+                        <div class="col-md-12">
+                            <h4 for="usuario">Usuario:</h4>
+                            <input type="text" formControlName="usuario" id="usuario" class="formControl" readonly>
+                            
+                        </div>
+
+                        <div class="col-md-12">
+                            <h4 for="email">Email:</h4>
+                                <input type="text" formControlName="email" id="email" class="formControl" readonly>
+                                
+                        </div>
+                        <div class="col-md-12">
+                            <h4 for="clave">Contraseña:</h4>
+                                <input type="text" formControlName="clave" id="clave" class="formControl" readonly>
+                                
+                    </div>
+                    <div class="col-md-12">
+                        <h4 for="estadoIncidencias">Roles:</h4>
+                        <select class="form-select mt-3" name="rol" id="rol" formControlName="rol" >
+                            <option value="Administrador">Administrador</option>
+                            <option value="Mantenimiento">Mantenimiento</option>
+                            <option value="Directivo">Directivo</option>
+                     </select>
+                </div>
+
+                       <div class="col-md-12">
+                        <h4 for="telefono">Telefono:</h4>
+                        <input type="text" formControlName="telefono" id="telefono" class="formControl" readonly>
+
+                       </div>
+                        <div class="form-button mt-3">
+                            <app-volver></app-volver>
+                            <button (click)="guardar()" class="btn btn-secondary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

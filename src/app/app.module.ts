@@ -7,6 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment.prod';
 import { AngularFireModule } from '@angular/fire/compat';
 import { DashboardComponent } from './shared/dashboard/dashboard.component';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { provideAuth } from '@angular/fire/auth';
+import { getAuth } from 'firebase/auth';
+import { provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp } from 'firebase/app';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -18,7 +26,15 @@ import { DashboardComponent } from './shared/dashboard/dashboard.component';
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,11 +9,12 @@
 
 
     <!-- Login Form -->
-    <form [formGroup]="usuarios">
-      <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="Usuario" formControlName="usuario">
-      <input type="text" id="clave" class="fadeIn second" name="clave" placeholder="Contraseña" formControlName="clave">
+    <h1>Registro</h1>
+    <form [formGroup]="formUsu">
+      <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="Nombre de Usuario" formControlName="usuario">
       <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email"formControlName="email">
-      <input type="text" id="telefono" class="fadeIn second" name="telefono" placeholder="Telefono" formControlName="telefono">
+      <input type="text" id="clave" class="fadeIn second" name="clave" placeholder="Contraseña" formControlName="clave">
+      <input type="text" id="telefono" class="fadeIn second" name="telefono" placeholder="+34 6113456567"formControlName="telefono">
       <button (click)="guardar()" class="btn btn-primary">Guardar</button>
     </form>
   </div>
