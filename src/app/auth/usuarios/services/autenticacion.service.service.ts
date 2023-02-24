@@ -41,6 +41,6 @@ export class AutenticacionServiceService {
     return this.role;
   }
   isAuthenticated() {
-    return this.isLoggedIn;
+    return this.afAuth.authState;
   }
 }

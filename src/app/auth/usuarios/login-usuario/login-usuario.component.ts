@@ -36,10 +36,8 @@ export class LoginUsuarioComponent implements OnInit {
         if(resp) {
           /* resp es true o false. Si es true puedo guardar el mail del usuario y su rol*/
           console.log(resp);
-          console.log("sdfsdf")
           this.listaUsers.forEach(user => {
             this.authService.establecerRol(user.data.rol);
-            console.log("Holaaa"+user.data.rolUsuario)
           });
           this.ruta.navigate(['/']);
         } else {

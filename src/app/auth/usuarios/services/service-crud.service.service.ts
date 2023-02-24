@@ -35,5 +35,9 @@ export class ServiceCrudServiceService {
   getusuarioEspecifica(coleccion: string, documentId: string, id: number){
     return this.afb.collection(coleccion, ref => ref.where('id', '==', id)).doc(documentId).snapshotChanges();
   }
+
+
+
+
    
 }
