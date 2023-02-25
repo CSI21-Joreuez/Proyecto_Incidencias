@@ -15,6 +15,7 @@ import { provideFirebaseApp } from '@angular/fire/app';
 import { initializeApp } from 'firebase/app';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { NgIf } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
+    NgIf
 
   ],
   providers: [],

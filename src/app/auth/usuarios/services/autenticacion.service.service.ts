@@ -37,10 +37,10 @@ export class AutenticacionServiceService {
     this.role = role;
   }
 
-  verRol() {
-    return this.role;
-  }
   isAuthenticated() {
     return this.afAuth.authState;
+  }
+  ObtenerRol() {
+    return this.role;
   }
 }

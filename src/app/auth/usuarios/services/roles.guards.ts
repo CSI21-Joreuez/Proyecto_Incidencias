@@ -32,6 +32,7 @@ export class RolesGuard implements CanActivate{
                 // console.log(res.length);
                 res.forEach( dataUser => {
                   this.eresAdministrador(dataUser.rol);
+                  console.log(dataUser.rol)
                 });
               }
             )
