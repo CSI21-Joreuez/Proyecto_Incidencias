@@ -46,10 +46,11 @@ export class LoginUsuarioComponent implements OnInit {
           });
           this.listaDeUsuarios.forEach(user => {
             this.authService.establecerRol(user.data.rol);
+            console.log(user.data.rol);
           });
     
           });
-        this.ruta.navigate(['/']);
+        this.ruta.navigate(['/form']);
       })
 
     }

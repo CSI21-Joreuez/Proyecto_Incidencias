@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
 import { Observable } from "rxjs";
 import { AutenticacionServiceService } from "./autenticacion.service.service";
-import { ServiceCrudServiceService } from "./service-crud.service.service";
 
 
 
@@ -13,46 +12,38 @@ import { ServiceCrudServiceService } from "./service-crud.service.service";
 })
 export class RolesGuard implements CanActivate{
 
-    coleccion="usuarios"
-    role:string='';
-    constructor(private AuthService: AutenticacionServiceService, private ruta: Router,private userService: ServiceCrudServiceService){
+    //coleccion="usuarios"
+    rol?:string
+    constructor(private AuthService: AutenticacionServiceService, private routes: Router){
     }
 
     canActivate(
         ruta: ActivatedRouteSnapshot, 
-        
       state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-   
-    this.AuthService.isAuthenticated().subscribe(
-        res => {
-          //console.log(res);
-          if (res && res.uid) {
-            this.userService.getUsuarioByFilter(this.coleccion,res.email).subscribe(
-              (res: any[])  => {
-                // console.log(res.length);
-                res.forEach( dataUser => {
-                  this.eresAdministrador(dataUser.rol);
-                  console.log(dataUser.rol)
-                });
-              }
-            )
-            return true;
-          } else {
-            console.log('Usuario no logueado!');
-            this.ruta.navigate(['']);
-            return false;
-          }
-        }
-      );
-      return true;
+        return this.checkUserLogin(ruta);
     }
   
-    eresAdministrador(rol: string): boolean {
+    /*eresAdministrador(rol: string): boolean {
       if(rol === "Administrador") {
         return true;
       }else{
         this.ruta.navigate(['/listaUsuarios']);
         return false;
       }
-    }
+    }*/
+
+    checkUserLogin(routes: ActivatedRouteSnapshot): boolean {
+      //const {scopes = []} = this.AuthService.ObtenerRol();
+      //const currentUser = this.AuthService.ObtenerRol();
+       this.rol = this.AuthService.ObtenerRol();
+      console.log(this.rol);
+      
+      if(this.rol === routes.data['rol'])
+          return true;
+      else{
+          //this.router.navigate(['usuarios']);
+          return false;
+      }
+
+  }
 }

@@ -7,11 +7,11 @@ import { ServiceCrudServiceService } from './service-crud.service.service';
   providedIn: 'root'
 })
 export class AutenticacionServiceService {
- private role: string ='';
- private isLoggedIn = false;
+  rol?:string;
+  isLoggedIn = false;
  userData: any;
 
-  constructor(private afAuth: AngularFireAuth, private serviceCrud: ServiceCrudServiceService ) {
+  constructor( private auth: Auth, private afAuth: AngularFireAuth ) {
    // this.userData = auth.authState;
   }
 
@@ -19,7 +19,10 @@ export class AutenticacionServiceService {
 
    login( email: string, clave:string) {
     this.isLoggedIn = true;
-    return this.afAuth.signInWithEmailAndPassword(email,clave)
+    //return this.afAuth.signInWithEmailAndPassword(email,clave)
+    console.log(this.isLoggedIn);
+    return signInWithEmailAndPassword(this.auth, email, clave);
+    
   }
 
    logout(): any {
@@ -32,15 +35,15 @@ export class AutenticacionServiceService {
  return this.afAuth.createUserWithEmailAndPassword(email,clave);
   }
 
-  establecerRol(role: string)
+  establecerRol(rol: string)
   {
-    this.role = role;
+    this.rol = rol;
   }
 
   isAuthenticated() {
     return this.afAuth.authState;
   }
   ObtenerRol() {
-    return this.role;
+    return this.rol;
   }
 }

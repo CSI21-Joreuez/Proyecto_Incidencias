@@ -8,7 +8,9 @@ import { VolverModule } from 'src/app/shared/volver/volver.module';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    
+  ],
   imports: [
     CommonModule,
     GestionUsuariosRoutingModule,

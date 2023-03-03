@@ -5,5 +5,4 @@ export interface usuario {
         email:string;
         telefono:string;
         rol:string;
-    
     }

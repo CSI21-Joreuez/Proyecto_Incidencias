@@ -29,7 +29,7 @@ export class ServiceCrudServiceService {
     }
     getUsuarioByFilter(coleccion: string, email: string | null)
     {
-      return this.afb.collection(coleccion, ref=> ref.where('email', "==", email)).snapshotChanges();
+      return this.afb.collection(coleccion, ref=> ref.where('email', '==', email)).snapshotChanges();
     }
       //Where specific
   getusuarioEspecifica(coleccion: string, documentId: string, id: number){

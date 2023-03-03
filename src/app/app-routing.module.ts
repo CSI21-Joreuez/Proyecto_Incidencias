@@ -6,7 +6,7 @@ const routes: Routes = [
   {path:'incidencias', loadChildren: () => import('./vistas/incidencias/incidencias.module').
 then(m =>m.IncidenciasModule),
 data:{
-  role: 'Directivo'
+  rol: 'Directivo'
 },canActivate: [RolesGuard]},
 
 {path:'form', loadChildren: () => import('./vistas/form-incidencias/form-incidencias.module').
@@ -15,17 +15,18 @@ then(m =>m.FormIncidenciasModule)},
 {path:'gestion', loadChildren: () => import('./vistas/gestion-incidencias/gestion-incidencias.module').
 then(m =>m.GestionIncidenciasModule),
 data:{
-  role: 'Mantenimiento'
-},canActivate: [RolesGuard]},
+  rol: 'Mantenimiento'
+},
+canActivate: [RolesGuard]
+},
 
 {path:'usuarios', loadChildren: () => import('./auth/usuarios/usuarios.module').
 then(m =>m.UsuariosModule)},
 
 {path:'listaUsuarios', loadChildren: () => import('./auth/usuarios/gestion-usuarios/gestion-usuarios.module').
-then(m =>m.GestionUsuariosModule)
-,
+then(m =>m.GestionUsuariosModule),
 data:{
-  role: 'Administrador'
+  rol: 'Admin'
 },canActivate: [RolesGuard]},
 ];
 

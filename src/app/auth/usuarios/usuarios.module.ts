@@ -31,7 +31,6 @@ import { MatTableModule } from '@angular/material/table';
     VolverModule,
     MatTableModule,
         
-
   ]
 })
 export class UsuariosModule { }
