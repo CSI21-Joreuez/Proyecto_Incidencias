@@ -24,7 +24,7 @@ export class FormUsuarioComponent implements OnInit {
       clave: [''],
       usuario:[''],
       telefono:[''],
-      rol:['Invitado']
+      rol:[]
     })
    }
 
