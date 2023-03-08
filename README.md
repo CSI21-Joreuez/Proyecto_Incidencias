@@ -1,3 +1,15 @@
+#Usuarios Para Acceder:
+#Directivo ---> ejemplo@gmail.com
+#Primera01
+
+#Admin ----->
+#jc.frth@gmail.com
+#Segunda02
+
+#Mantenimiento ----->
+#usuariomantenimiento@gmail.com
+#Primera01
+#
 # Incidencias
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
